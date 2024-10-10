@@ -1,0 +1,32 @@
+﻿@page "/saludar"
+@rendermode InteractiveServer
+
+<PageTitle>Saludar</PageTitle>
+
+<h3>Saludar</h3>
+
+<label>Inserta tu nombre</label>
+<br/>
+<input type="text" @bind="nombre" />
+<br />
+<button @onclick="fnSaludar" type="submit">Saludar</button>
+<br/>
+<label>@saludo</label>
+
+@code {
+    private string nombre;
+    private string saludo;
+
+    public void fnSaludar()
+    {
+        if (String.IsNullOrEmpty(nombre))
+        {
+            saludo = "INSERTA BIEN EL NOMBRE ";
+        }
+        else
+        {
+            saludo = "HOLA " + nombre;
+        }
+        
+    }
+}

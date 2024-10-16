@@ -1,8 +1,8 @@
+using Ejercicio01_02.Models;
 using Microsoft.AspNetCore.Mvc;
-using Prueba.Models;
 using System.Diagnostics;
 
-namespace Prueba.Controllers
+namespace Ejercicio01_02.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,12 +15,7 @@ namespace Prueba.Controllers
 
         public IActionResult Index()
         {
-            return Index();
-        }
-
-        public int numerin()
-        {
-            return 33;
+            return View();
         }
 
         public IActionResult Privacy()

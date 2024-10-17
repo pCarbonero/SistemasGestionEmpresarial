@@ -17,16 +17,19 @@ namespace Ejercicio01.Controllers
         {
             if (DateTime.Now.Hour >= 5 && DateTime.Now.Hour < 12)
             {
-                ViewBag.Mensaje = "Buenos días";
+                ViewData["Mensaje"] = "Buenos días";
             }
             else if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 20)
             {
-                ViewBag.Mensaje = "Buenas tardes";
+                ViewData["Mensaje"] = "Buenas tardes";
             }
             else if (DateTime.Now.Hour >= 20 && DateTime.Now.Hour < 5)
             {
-                ViewBag.Mensaje = "Buenas noches";
+                ViewData["Mensaje"] = "Buenas noches";
             }
+
+            ViewBag.Horas = DateTime.Now.Hour;
+            ViewBag.Minutos = DateTime.Now.Minute;
             return View();
         }
 

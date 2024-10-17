@@ -3,9 +3,8 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Hola son las @TimeOnly.FromDateTime(DateTime.Now)</p>
-    @if (TimeOnly.FromDateTime(DateTime.Now) > new TimeOnly(12, 0))
+    <h1>Hola son las @DateTime.Now.Hour:@DateTime.Now.Minute</h1>
+    @if (DateTime.Now.Hour > 12)
     {
         <p>Ya ha pasado el medio día</p>
     }

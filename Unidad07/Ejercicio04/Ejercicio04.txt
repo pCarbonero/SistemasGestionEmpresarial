@@ -1,0 +1,25 @@
+ENTIDADES
+
+	ClsPersona
+		string nombre (get, set)
+		string apellidos (get, set)
+		int edad (get, set)
+		int departamentos (get, set)
+
+	ClsDepartamento
+		int idDepartamento (get)
+		string nombreDepartamento(get, set)
+
+DAL
+
+	ClsListados
+		public static List<ClsPersona> ListadoPersonas()
+		public static List<ClsDepartamentos> ListadoDepartamentos()
+
+
+ViewModel
+	ClsEditarPersonaVM(): ClsPersona
+		List<ClsDepartamento> departamentos (get)
+		public ClsEditarPersonaVM(){
+			departamentos = ClsDepartamento.ListadoDepartamentos();
+		}

@@ -6,11 +6,13 @@ namespace Ejercicio04.Models.VM
 {
     public class ClsEditarPersona: ClsPersona
     {
-        public List<ClsDepartamento> listadoDepartamentos { get; }
+
+
+        public List<ClsDepartamento> ListadoDepartamentos { get; }
 
         public ClsEditarPersona()
         {
-            listadoDepartamentos = ClsListado.listadoDepartamentos();
+            ListadoDepartamentos = ClsListado.listadoDepartamentos();
         }
     }
 }

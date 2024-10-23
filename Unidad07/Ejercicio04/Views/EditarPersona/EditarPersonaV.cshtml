@@ -1,0 +1,15 @@
+﻿@{
+    @model Ejercicio04.Models.VM.ClsEditarPersona
+
+}
+
+<p>Nombre: </p>
+<input value="@Model.Nombre" />
+<p>Apellido: </p>
+<input value="@Model.Apellidos" />
+<p>Edad: </p>
+<input value="@Model.Edad" />
+
+@Html.DropDownList("Departamento",
+                        new SelectList(Model.ListadoDepartamentos, "IdDepartamento", "NombreDepartamento"), "Seleccione un Departamento")
+

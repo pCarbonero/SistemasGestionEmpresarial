@@ -10,10 +10,12 @@ namespace Ejercicio04.Controllers
     {
         public IActionResult EditarPersonaV()
         {
-           /* List<ClsPersona> list = ClsListado.listadoPersonas();
-            int index = random.Next(list.Count);*/
+            Random random = new Random();   
+            List<ClsPersona> list = ClsListado.listadoPersonas();
+            int randomNumber = random.Next(0, list.Count);
 
-            ClsPersona persona = new ClsPersona("Pablo", "Carbonero", 21, 1);
+
+            ClsPersona persona = list[randomNumber];
             
             ClsEditarPersona ep = new ClsEditarPersona
             {

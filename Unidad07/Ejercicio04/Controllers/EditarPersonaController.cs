@@ -16,14 +16,13 @@ namespace Ejercicio04.Controllers
 
 
             ClsPersona persona = list[randomNumber];
+
+            ClsEditarPersona ep = new ClsEditarPersona();
             
-            ClsEditarPersona ep = new ClsEditarPersona
-            {
-                Nombre = persona.Nombre,
-                Apellidos = persona.Apellidos,
-                Edad = persona.Edad,
-                Departamento = persona.Departamento,
-            };
+            ep.Nombre = persona.Nombre;
+            ep.Apellidos = persona.Apellidos;
+            ep.Edad = persona.Edad;
+            ep.Departamento = persona.Departamento;
 
            
             return View(ep);

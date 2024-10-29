@@ -3,13 +3,19 @@
 
 }
 
-<p>Nombre: </p>
-<input value="@Model.Nombre" />
-<p>Apellido: </p>
-<input value="@Model.Apellidos" />
-<p>Edad: </p>
-<input value="@Model.Edad" />
+<form action="@Url.Action("EditarPersonaV")" method="post">
+    <p>Nombre: </p>
+    <input value="@Model.Nombre" name="nombre"/>
+    <p>Apellido: </p>
+    <input value="@Model.Apellidos" name="apellidos"/>
+    <p>Edad: </p>
+    <input value="@Model.Edad" name="edad"/>
+    <button type="submit">Submit</button>
+ </form>
+
 
 @Html.DropDownList("Departamento",
                         new SelectList(Model.ListadoDepartamentos, "IdDepartamento", "NombreDepartamento"), "Seleccione un Departamento")
+
+
 

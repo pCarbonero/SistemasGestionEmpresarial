@@ -8,7 +8,7 @@ namespace Ejercicio04.Controllers
 {
     public class EditarPersonaController : Controller
     {
-        public IActionResult EditarPersonaV()
+        public ActionResult EditarPersonaV()
         {
             Random random = new Random();   
             List<ClsPersona> list = ClsListado.listadoPersonas();
@@ -25,6 +25,26 @@ namespace Ejercicio04.Controllers
             ep.Departamento = persona.Departamento;
 
            
+            return View(ep);
+        }
+
+        // a este action se accede cuando el boton se pulsa
+        [HttpPost]
+        public ActionResult EditarPersonaV(ClsPersona persona)
+        {
+            Random random = new Random();
+            List<ClsPersona> list = ClsListado.listadoPersonas();
+            int randomNumber = random.Next(0, list.Count);
+
+
+            ClsEditarPersona ep = new ClsEditarPersona();
+
+            ep.Nombre = persona.Nombre;
+            ep.Apellidos = persona.Apellidos;
+            ep.Edad = persona.Edad;
+            ep.Departamento = persona.Departamento;
+
+
             return View(ep);
         }
     }

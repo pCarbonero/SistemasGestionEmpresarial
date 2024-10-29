@@ -1,8 +1,9 @@
-using Ejercicio02.Models;
+using Ejercicio03.Models;
+using Ejercicio03Ent;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Ejercicio02.Controllers
+namespace Ejercicio03.Controllers
 {
     public class HomeController : Controller
     {
@@ -19,10 +20,11 @@ namespace Ejercicio02.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string nombre)
+        public ActionResult Index(ClsPersona persona)
         {
-            ViewBag.nombre = nombre;
-            return View("Saludo");
+            ClsPersona p = persona;
+
+            return View("PersonaModificada", p);
         }
 
         public IActionResult Privacy()

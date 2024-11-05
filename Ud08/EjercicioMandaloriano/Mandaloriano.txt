@@ -1,0 +1,22 @@
+[ENTIDADES]
+ClsMision
+	- string nombre
+	- string descripcion
+	- float recompensa
+
+[DAL]
+ClsListas
+	public static List<ClsMision> listaMisiones -> return lista de objetos de objetos de ClsMision
+
+[BL]
+	public static List<ClsMision> listaMisiones
+		si antes 00:00 -> ir vista misiones
+		si despues 00:00 y antes 08:00 -> ir vista aDormir
+		
+[ViewModel]
+ElegirMisionVM
+	List<ClsMision> listaMisiones
+	ClsMision misionSelect
+
+DetallesMisionVM
+	ClsMision mision

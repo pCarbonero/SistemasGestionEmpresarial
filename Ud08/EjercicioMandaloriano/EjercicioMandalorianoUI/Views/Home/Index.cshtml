@@ -22,42 +22,80 @@
         text-align: center;
         font-family: Chakra Petch;
     }
+    h1{
+        font-family: 'Press Start 2P';
+        color: #fffbd9
+    }
+
+    h2 {
+        font-family: 'Press Start 2P';
+        color: #fffbd9
+    }
+
+    h3 {
+        font-family: 'Press Start 2P';
+        color: #fffbd9
+    }
+
+    h4 {
+        font-family: 'Press Start 2P';
+        color: #fffbd9
+    }
     p{
         font-family: Chakra Petch;
+        color: #fffbd9
     }
     input{
         font-family: Chakra Petch;
     }
+
+    .hora-actual {
+        position: fixed;
+        bottom: 60px; 
+        right: 60px; 
+        font-size: 18px;
+        color: #fffbd9; 
+        font-family: 'Press Start 2P';
+    }
 </style>
 
-<body style="background-color: #eaeaea;">
+<body style="background-color: #343434;">
 @if (Model.listadoMisiones == null)
 {
-    <h1 style="font-family: 'Press Start 2P'; text-align: center;">Página cerrada hasta las 08:00</h1>
-    <h3 style="font-family: 'Press Start 2P'; text-align: center;">Gracias por usar nuestra web</h3>
-    <p style="font-family: 'Press Start 2P'; text-align: center;">Hora actual:@TimeOnly.FromDateTime(DateTime.Now)</p>
-}
-else
-{
+    <h1 style="text-align: center; height:100px;">Página cerrada hasta las 08:00</h1>
+    <h3 style="text-align: center;">Gracias por usar nuestra web</h3>
+    }
+    else
+    {
 
-    <h1 style="font-family: 'Press Start 2P'; text-align: center;">LISTADO DE MISIONES</h1>
-    <div style="display: flex; justify-content: center; align-items: center; height:200px">
-        <form method="post">
-            <select id="misiones" name="idMision">
-                @foreach (var mision in Model.listadoMisiones)
-                {
-                    <option value="@mision.Id">@mision.Nombre</option>
-                }
+        <h1 style="text-align:center;">MISIONES DISPONIBLES</h1>
+        <div style="display: flex; justify-content: center; align-items: center; height:200px">
+            <form method="post">
+                <select id="misiones" name="idMision">
+                    <option value="" disabled selected>
+                        @if (Model.misionSeleccionada != null) 
+                        { 
+                            @Model.misionSeleccionada.Nombre 
+                        }
+                        else
+                        {
+                            @:Ver misiones
+                        }
+                    </option>
+                    @foreach (var mision in Model.listadoMisiones)
+                    {
+                        <option value="@mision.Id">@mision.Nombre</option>
+                    }
             </select>
             <input type="submit" value="Detalles"/>
         </form>
     </div>  
     if(Model.misionSeleccionada != null)
     {
-        <div style="display: flex; flex-direction: column; border:1px solid black;
+            <div style="display: flex; flex-direction: column; border:5px solid #fffbd9;
                     width: 700px; margin: 0 auto; padding: 20px;">
-            <h2 style="font-family: 'Press Start 2P'">@Model.misionSeleccionada.Nombre</h2>
-            <h4 style="font-family: 'Press Start 2P'">@Model.misionSeleccionada.Recompensa Créditos</h4>
+            <h2>@Model.misionSeleccionada.Nombre</h2>
+            <h4>@Model.misionSeleccionada.Recompensa Créditos</h4>
             <p>@Model.misionSeleccionada.Descripcion</p>
             <input type="submit" value="Aceptar misión"
                    style="align-self: end;" width="200" />
@@ -65,4 +103,7 @@ else
     }
     
 }
+    <div class="hora-actual">
+        @TimeOnly.FromDateTime(DateTime.Now)
+    </div>
 </body>

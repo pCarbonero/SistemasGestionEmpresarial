@@ -11,8 +11,9 @@
 
         #region Constructores
         public ClsMision() { }
-        public ClsMision(string nombre, string descripcion, float recompensa)
+        public ClsMision(int id, string nombre, string descripcion, float recompensa)
         {
+            Id = id;
             Nombre = nombre;
             Descripcion = descripcion;
             Recompensa = recompensa;

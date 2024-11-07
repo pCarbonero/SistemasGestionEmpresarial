@@ -5,11 +5,16 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjercicioMandalorianoUI", "EjercicioMandalorianoUI\EjercicioMandalorianoUI.csproj", "{811EA11D-FC52-4727-8C8C-0E38F49FB51F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{393C1733-1D0E-4E56-A9D5-3E01A78A134B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{393C1733-1D0E-4E56-A9D5-3E01A78A134B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{1EB6AAC3-DAF3-4D66-B37E-6C60E9197259}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{1EB6AAC3-DAF3-4D66-B37E-6C60E9197259}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{A409CF67-F5F3-430D-B646-263052AC436F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{A409CF67-F5F3-430D-B646-263052AC436F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Txt", "Txt", "{A0E2C029-59F2-40EF-BF8D-C605DD790A17}"
+	ProjectSection(SolutionItems) = preProject
+		EjercicioMandalorianoUI\Mandaloriano.txt = EjercicioMandalorianoUI\Mandaloriano.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,12 +9,12 @@ ClsMision
 ClsListas
 	public static List<ClsMision> listaMisiones -> return lista de objetos de objetos de ClsMision
 
-	public static ClsMision misionPorIdDal(int id)
+	public static ClsMision misionPorIdDal(int id) -> return mision con el id pasado por parametro
 
 [BL]
 	public static List<ClsMision> listaMisiones
-		si antes 00:00 -> devolver lista
-		si despues 00:00 y antes 08:00 -> devolver lista null
+		si antes 00:00 y después de las 08:00 -> devolver lista
+		si después 00:00 y antes 08:00 -> devolver lista null
 
 	public static ClsMision misionPorIdBl(int id)
 

@@ -11,11 +11,17 @@ namespace EjercicioMandalorianoUI.Controllers
     {
         public IActionResult Index()
         {
-            VerMisionesVM vm = new VerMisionesVM();
+            try
+            {
+                VerMisionesVM vm = new VerMisionesVM();
+                vm.listadoMisiones = ClsListadosBL.listadoMisionesBL();
 
-            vm.listadoMisiones = ClsListadosBL.listadoMisionesBL();
-
-            return View(vm);
+                return View(vm);
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+            }           
         }
 
         [HttpPost]

@@ -63,14 +63,25 @@ namespace DAL
         {
             List<ClsMision> lista = listadoMisionesDAL();
             ClsMision misionBuscada = null;
-            foreach (ClsMision mision in lista)
+            int i = 0;
+            bool encontrada = false;
+
+            while (i < lista.Count && !encontrada)
+            {
+                if(lista[i].Id == Id)
+                {
+                    encontrada = true;
+                    misionBuscada = (ClsMision)lista[i];
+                }
+                i++;
+            }
+            /*foreach (ClsMision mision in lista)
             {
                 if (mision.Id == Id) 
                 { 
                     misionBuscada = mision;
                 }
-            }
-            
+            }*/            
             return misionBuscada;
         }
     }

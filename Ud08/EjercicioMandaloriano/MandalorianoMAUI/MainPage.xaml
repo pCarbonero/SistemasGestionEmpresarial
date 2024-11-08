@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MandalorianoMAUI.ViewModel"
+             x:Class="MandalorianoMAUI.MainPage">
+    <ContentPage.BindingContext>
+        <vm:VerMisionesVM/>
+    </ContentPage.BindingContext>
+
+    <ScrollView BackgroundColor ="#343434" >
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Picker ItemsSource="{Binding ListadoMisiones}"
+                    SelectedItem="{Binding MisionSeleccionada}"
+                    ItemDisplayBinding="{Binding Nombre}"
+                    BackgroundColor="#fffbd9"
+                    TextColor="Black"
+                    IsVisible="{Binding EsTemprano}">
+            </Picker>
+
+            <Label Text="Página cerrada. Misiones disponibles a las 8." IsVisible="{Binding EsTarde}" TextColor="#fffbd9"/>
+
+            <Label Text="{Binding MisionSeleccionada.Nombre}" TextColor="#fffbd9" FontSize="50" FontAttributes="Bold"/>
+            <Label Text="{Binding MisionSeleccionada.Recompensa}" TextColor="#fffbd9" FontSize="30"/>
+            <Label Text="{Binding MisionSeleccionada.Descripcion}" TextColor="#fffbd9" FontSize="15"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

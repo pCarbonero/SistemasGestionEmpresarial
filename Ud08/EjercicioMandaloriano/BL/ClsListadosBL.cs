@@ -13,7 +13,7 @@ namespace BL
         {
             List<ClsMision> listado;
 
-            if (DateTime.Now.Hour > 0 && DateTime.Now.Hour < 8)
+            if (DateTime.Now.Hour > 0 && DateTime.Now.Hour < 15)
             {
                 throw new HourException("Página cerrada. Misiones disponibles a las 08:00. Gracias.");
             }

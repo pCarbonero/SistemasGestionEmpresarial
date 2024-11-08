@@ -47,7 +47,7 @@ namespace MandalorianoMAUI.ViewModel
             catch (HourException ex)
             {
                 esTarde = true;
-                notifyPropertyChanged("EsTarde");
+                //notifyPropertyChanged("EsTarde");
             }
 
         }

@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "TardeView";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+    form {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+    select{
+        padding: 5px;
+        text-align: center;
+        font-family: Chakra Petch;
+    }
+    h1, h2, h3 , h4{
+        font-family: 'Press Start 2P';
+        color: #fffbd9
+    }
+
+    p{
+        font-family: Chakra Petch;
+        color: #fffbd9
+    }
+    input{
+        font-family: Chakra Petch;
+    }
+
+    .hora-actual {
+        position: fixed;
+        bottom: 60px;
+        right: 60px;
+        font-size: 18px;
+        color: #fffbd9;
+        font-family: 'Press Start 2P';
+    }
+</style>
+
+<body style="background-color: #343434;">
+    <h1 style="text-align: center; height:100px;">Página cerrada hasta las 08:00</h1>
+    <h3 style="text-align: center;">Gracias por usar nuestra web</h3>
+    <div class="hora-actual">
+        @DateTime.Now.ToString("HH:mm")
+    </div>
+</body>

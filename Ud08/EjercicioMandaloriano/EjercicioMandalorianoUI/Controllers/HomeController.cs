@@ -18,9 +18,9 @@ namespace EjercicioMandalorianoUI.Controllers
 
                 return View(vm);
             }
-            catch (Exception ex)
+            catch (HourException ex)
             {
-                return View("Error");
+                return View("TardeView");
             }           
         }
 

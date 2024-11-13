@@ -1,3 +1,4 @@
+using DAL;
 using Ejercicio01.Models;
 using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,16 @@ namespace Ejercicio01.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult ConectarBD()
+        {
+            clsMyConnection connection = new clsMyConnection();
+
+            ViewBag.estado = connection.getConnection();
+
+            return View("Index");
         }
 
         public IActionResult Privacy()

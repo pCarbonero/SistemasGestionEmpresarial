@@ -43,7 +43,6 @@ namespace DAL
 
             try
             {
-
                 connection.ConnectionString = $"server={server};database={dataBase};uid={user};pwd={pass};";
                 connection.Open();
             }

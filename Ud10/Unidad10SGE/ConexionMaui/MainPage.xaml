@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ConexionMaui.ViewModels"
+             x:Class="ConexionMaui.MainPage">
+    <ContentPage.BindingContext>
+        <vm:ConectarVM/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="{Binding Mensaje}"></Label>
+            <Button Text="Conectar" Command="{Binding ConectarCommannd}"/>
+            <Button Text="Cerrar" Command="{Binding CerrarCommannd}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

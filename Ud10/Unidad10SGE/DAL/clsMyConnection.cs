@@ -14,9 +14,9 @@ namespace DAL
         public clsMyConnection()
         {
 
-            this.server = "pCarboneroBD.database.windows.net";
+            this.server = "pcarbonerodam.database.windows.net";
             this.dataBase = "pCarboneroBD";
-            this.user = "Usuario";
+            this.user = "usuario";
             this.pass = "LaCampana123";
 
         }

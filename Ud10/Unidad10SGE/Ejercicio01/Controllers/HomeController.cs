@@ -27,9 +27,21 @@ namespace Ejercicio01.Controllers
         public ActionResult ConectarBD()
         {
             clsMyConnection connection = new clsMyConnection();
-
-            ViewBag.estado = connection.getConnection();
-
+            SqlConnection c = new SqlConnection();
+            try
+            {
+                c = connection.getConnection();
+                ViewBag.estado = c.ToString();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.estado = ex.ToString();
+            }
+            finally
+            {
+                connection.closeConnection(ref c);
+            }
+                 
             return View("Index");
         }
 

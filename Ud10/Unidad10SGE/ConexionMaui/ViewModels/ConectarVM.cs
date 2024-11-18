@@ -1,4 +1,6 @@
 ﻿using DAL;
+using BL;
+using Entidades;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -14,20 +16,22 @@ namespace ConexionMaui.ViewModels
     internal class ConectarVM : INotifyPropertyChanged
     {
         #region atributos
-        private DelegateCommand conectarCommand;
-        private string mensaje = "VACIO";
+        //private DelegateCommand conectarCommand;
+       // private string mensaje = "";
         #endregion
 
         #region propiedades
-        public string Mensaje { get { return mensaje; } }
+        //public string Mensaje { get { return mensaje; } }
+        public List<clsPersona> listadoPersonas { get; }
 
-        public DelegateCommand ConectarCommannd { get { return conectarCommand; } }
+        //public DelegateCommand ConectarCommannd { get { return conectarCommand; } }
         #endregion
 
         #region constructores
         public ConectarVM() 
         { 
-            conectarCommand = new DelegateCommand(executeConectar);
+           // conectarCommand = new DelegateCommand(executeConectar);
+            //listadoPersonas = clsListadosBL.listadoCompletoPersonasBL();
         }
         #endregion
 
@@ -42,7 +46,7 @@ namespace ConexionMaui.ViewModels
         #endregion
 
         #region comandos
-        private void executeConectar()
+        /*private void executeConectar()
         {
             SqlConnection sqlConnect = new SqlConnection();
             clsMyConnection connection = new clsMyConnection();
@@ -62,7 +66,7 @@ namespace ConexionMaui.ViewModels
         {
             return true;
         }
-
+        */
 
         #endregion
     }

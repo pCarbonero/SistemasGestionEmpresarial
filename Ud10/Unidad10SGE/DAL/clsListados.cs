@@ -66,7 +66,7 @@ namespace DAL
             return lista;
         }
 
-        public static clsPersona GetPersonaId()
+        public static clsPersona GetPersonaId(int id)
         {
             clsPersona persona = new clsPersona();
 
@@ -79,11 +79,28 @@ namespace DAL
             try
             {
                 connect = connection.getConnection();
+                miComando.Parameters.AddWithValue("@Id", id);
                 miComando.CommandText = "SELECT *  FROM personas WHERE Id = @Id";
                 miComando.Connection = connect;
                 miLector = miComando.ExecuteReader();
 
-
+                while (miLector.Read())
+                {
+                    if (miLector.HasRows)
+                    {
+                        persona = new clsPersona();
+                        persona.Id = (int)miLector["ID"];
+                        persona.Nombre = (string)miLector["Nombre"];
+                        persona.Apellidos = (string)miLector["Apellidos"];
+                        persona.Foto = (string)miLector["Foto"];
+                        if (miLector["FechaNacimiento"] != System.DBNull.Value)
+                        {
+                            persona.FechaNacimiento = (DateTime)miLector["FechaNacimiento"];
+                        }
+                        persona.Direccion = (string)miLector["Direccion"];
+                        persona.Telefono = (string)miLector["Telefono"];
+                    }
+                }               
             }
             catch (Exception e)
             {

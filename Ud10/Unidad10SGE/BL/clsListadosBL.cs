@@ -17,5 +17,11 @@ namespace BL
 
             return lista;
         }
+
+        public static clsPersona getPersonaIdBL(int id) 
+        { 
+            clsPersona persona = clsListados.GetPersonaId(id);
+            return persona;
+        }
     }
 }

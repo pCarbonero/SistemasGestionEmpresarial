@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConexionMaui", "ConexionMau
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{B76BD0C6-4A21-430E-810A-75193C9CE115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaBDMaui", "ListaBDMaui\ListaBDMaui.csproj", "{84984CA7-5C19-4019-8CD2-1CA70B1681C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListaBDMaui", "ListaBDMaui\ListaBDMaui.csproj", "{84984CA7-5C19-4019-8CD2-1CA70B1681C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio02ListadoBDASP", "Ejercicio02ListadoBDASP\Ejercicio02ListadoBDASP.csproj", "{E3BC17EC-0A6C-4B14-A85E-FB87022CD1BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{84984CA7-5C19-4019-8CD2-1CA70B1681C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84984CA7-5C19-4019-8CD2-1CA70B1681C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84984CA7-5C19-4019-8CD2-1CA70B1681C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E3BC17EC-0A6C-4B14-A85E-FB87022CD1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3BC17EC-0A6C-4B14-A85E-FB87022CD1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3BC17EC-0A6C-4B14-A85E-FB87022CD1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3BC17EC-0A6C-4B14-A85E-FB87022CD1BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

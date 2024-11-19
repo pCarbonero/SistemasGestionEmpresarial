@@ -65,5 +65,36 @@ namespace DAL
 
             return lista;
         }
+
+        public static clsPersona GetPersonaId()
+        {
+            clsPersona persona = new clsPersona();
+
+            clsMyConnection connection = new clsMyConnection();
+            SqlConnection connect = new SqlConnection();
+
+            SqlCommand miComando = new SqlCommand();
+            SqlDataReader miLector;
+
+            try
+            {
+                connect = connection.getConnection();
+                miComando.CommandText = "SELECT *  FROM personas WHERE Id = @Id";
+                miComando.Connection = connect;
+                miLector = miComando.ExecuteReader();
+
+
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.closeConnection(ref connect);
+            }
+
+            return persona;
+        }
     }
 }

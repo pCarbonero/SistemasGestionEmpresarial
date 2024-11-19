@@ -16,22 +16,20 @@ namespace ConexionMaui.ViewModels
     internal class ConectarVM : INotifyPropertyChanged
     {
         #region atributos
-        //private DelegateCommand conectarCommand;
-       // private string mensaje = "";
+        private DelegateCommand conectarCommand;
+        private string mensaje = "";
         #endregion
 
         #region propiedades
-        //public string Mensaje { get { return mensaje; } }
-        public List<clsPersona> listadoPersonas { get; }
+        public string Mensaje { get { return mensaje; } }
 
-        //public DelegateCommand ConectarCommannd { get { return conectarCommand; } }
+        public DelegateCommand ConectarCommannd { get { return conectarCommand; } }
         #endregion
 
         #region constructores
         public ConectarVM() 
-        { 
-           // conectarCommand = new DelegateCommand(executeConectar);
-            //listadoPersonas = clsListadosBL.listadoCompletoPersonasBL();
+        {
+            conectarCommand = new DelegateCommand(executeConectar);           
         }
         #endregion
 
@@ -46,7 +44,7 @@ namespace ConexionMaui.ViewModels
         #endregion
 
         #region comandos
-        /*private void executeConectar()
+        private void executeConectar()
         {
             SqlConnection sqlConnect = new SqlConnection();
             clsMyConnection connection = new clsMyConnection();
@@ -66,7 +64,7 @@ namespace ConexionMaui.ViewModels
         {
             return true;
         }
-        */
+        
 
         #endregion
     }

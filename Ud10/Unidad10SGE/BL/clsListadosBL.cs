@@ -13,7 +13,7 @@ namespace BL
         {
             List<clsPersona> lista = new List<clsPersona>();
 
-            //lista = clsListados.listadoCompletoPersonasDal();
+            lista = clsListados.listadoCompletoPersonasDal();
 
             return lista;
         }

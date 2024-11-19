@@ -12,22 +12,8 @@
             Padding="30,0"
             Spacing="25">
 
-            <ListView ItemsSource="{Binding listadoPersonas}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Vertical" Padding="10">
-                                <!-- Mostrar Nombre y Apellidos -->
-                                <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="Medium" />
-                                <Label Text="{Binding Apellidos}" FontSize="Small" />
-
-                                <!-- Mostrar Teléfono -->
-                                <Label Text="{Binding Telefono}" FontSize="Small" TextColor="Gray" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <Label Text="{Binding Mensaje}"></Label>
+            <Button Command="{Binding ConectarCommannd}" Text="Conectar"/>
         </VerticalStackLayout>
     </ScrollView>
 

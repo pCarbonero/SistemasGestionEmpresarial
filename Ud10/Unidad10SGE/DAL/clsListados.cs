@@ -66,6 +66,11 @@ namespace DAL
             return lista;
         }
 
+        /// <summary>
+        /// Funcion que busca una persona con un id en la base de datos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>persona con id deseado</returns>
         public static clsPersona GetPersonaId(int id)
         {
             clsPersona persona = new clsPersona();

@@ -17,8 +17,7 @@ namespace Ejercicio02ListadoBDASP.Controllers
 
         public IActionResult Index()
         {
-            List<clsPersona> listaPersonas = clsListadosBL.listadoCompletoPersonasBL();
-            return View(listaPersonas);
+            return View();
         }
 
         public IActionResult Privacy()

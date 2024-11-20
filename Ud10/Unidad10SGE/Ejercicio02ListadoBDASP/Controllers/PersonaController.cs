@@ -5,12 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Ejercicio02ListadoBDASP.Controllers
 {
-    public class DetailsController : Controller
+    public class PersonaController : Controller
     {
         // GET: DetailsController
         public ActionResult Index()
         {
-            return View();
+            List<clsPersona> listaPersonas = clsListadosBL.listadoCompletoPersonasBL();
+            return View(listaPersonas);
         }
 
         // GET: DetailsController/Details/5

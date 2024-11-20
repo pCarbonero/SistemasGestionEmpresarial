@@ -12,15 +12,30 @@ namespace BL
         public static List<clsPersona> listadoCompletoPersonasBL()
         {
             List<clsPersona> lista = new List<clsPersona>();
-
-            lista = clsListados.listadoCompletoPersonasDal();
+            try
+            {
+                lista = clsListados.listadoCompletoPersonasDal();
+            }
+            catch (Exception ex) { throw; }       
 
             return lista;
         }
 
+        /// <summary>
+        /// Funcion que busca una persona por su id y la devuelve
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>objeto persona</returns>
         public static clsPersona getPersonaIdBL(int id) 
-        { 
-            clsPersona persona = clsListados.GetPersonaId(id);
+        {
+            clsPersona persona = new clsPersona();
+
+            try
+            {
+                 persona = clsListados.GetPersonaId(id);
+            }
+            catch (Exception ex) { throw; }
+
             return persona;
         }
     }

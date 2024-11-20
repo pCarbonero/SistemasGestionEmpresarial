@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class ClsDepartamento
+    public class clsDepartamento
     {
         #region Propiedades
         public int Id { get; set; }
@@ -14,9 +14,9 @@ namespace Entidades
         #endregion
 
         #region Constructores
-        public ClsDepartamento() { }
+        public clsDepartamento() { }
 
-        public ClsDepartamento(int id, string nombre)
+        public clsDepartamento(int id, string nombre)
         {
             Id = id;
             Nombre = nombre;

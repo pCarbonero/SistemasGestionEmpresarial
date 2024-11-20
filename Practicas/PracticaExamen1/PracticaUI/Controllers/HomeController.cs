@@ -18,10 +18,10 @@ namespace PracticaUI.Controllers
 
         public IActionResult Index()
         {
-            List<ClsPersona> listaPersonas = new List<ClsPersona>();
+            List<clsPersona> listaPersonas = new List<clsPersona>();
             try
             {
-                listaPersonas = ClsListadosBL.listadoCompletoPersonasBL();
+                listaPersonas = clsListadosBL.listadoCompletoPersonasBL();
             }catch (Exception ex)
             {
                 throw;

@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 namespace BL
 {
-    public class ClsListadosBL
+    public class clsListadosBL
     {
-        public static List<ClsPersona> listadoCompletoPersonasBL()
+        public static List<clsPersona> listadoCompletoPersonasBL()
         {
-            List<ClsPersona> listado = new List<ClsPersona>();
+            List<clsPersona> listado = new List<clsPersona>();
 
             try
             {
-                listado = ClsListados.listadoCompletoPersonasDAL();
+                listado = clsListados.listadoCompletoPersonasDAL();
             }catch (Exception ex) 
             {
                 throw;
@@ -21,15 +21,15 @@ namespace BL
             return listado;
         }
 
-        public static ClsPersona getPersonaID(int id)
+        public static clsPersona getPersonaID(int id)
         {
-            ClsPersona persona = ClsListados.getPersonaId(id);
+            clsPersona persona = clsListados.getPersonaId(id);
             return persona;
         }
 
-        public static bool editarPersonaIdBL(ClsPersona persona)
+        public static bool editarPersonaIdBL(clsPersona persona)
         {
-            bool edit = ClsListados.editarPersonaIdDAL(persona);
+            bool edit = clsListados.editarPersonaIdDAL(persona);
 
             return edit;
         }

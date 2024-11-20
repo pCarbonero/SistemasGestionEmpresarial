@@ -2,16 +2,27 @@
 using Entidades;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PracticaUI.Models.ViewModels;
 
 namespace PracticaUI.Controllers
 {
-    public class DetailsController : Controller
+    public class PersonaController : Controller
     {
         // GET: EditController
         public ActionResult Index()
         {
-            return View();
+            PersonaListaPersonasVM personaListaPersonasVM = new PersonaListaPersonasVM();
+            return View(personaListaPersonasVM);
         }
+
+        [HttpPost]
+        public ActionResult Index(int id)
+        {
+            PersonaListaPersonasVM personaListaPersonasVM = new PersonaListaPersonasVM();
+            personaListaPersonasVM.Persona = clsListadosBL.getPersonaID(id);
+            return View(personaListaPersonasVM);
+        }
+
 
         // GET: EditController/Details/5
         public ActionResult Details(int id)
@@ -43,19 +54,19 @@ namespace PracticaUI.Controllers
         // GET: EditController/Edit/5
         public ActionResult Edit(int id)
         {
-            ClsPersona persona = ClsListadosBL.getPersonaID(id);
+            clsPersona persona = clsListadosBL.getPersonaID(id);
             return View(persona);
         }
 
         // POST: EditController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection, ClsPersona persona)
+        public ActionResult Edit(int id, IFormCollection collection, clsPersona persona)
         {
             try
             {
-                ClsListadosBL.editarPersonaIdBL(persona);
-                return RedirectToAction("Index", "Home");
+                clsListadosBL.editarPersonaIdBL(persona);
+                return RedirectToAction("Index");
             }
             catch
             {

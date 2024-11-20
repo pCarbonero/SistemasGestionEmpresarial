@@ -2,71 +2,69 @@
 
 namespace DAL
 {
-    public class ClsListados
+    public class clsListados
     {
-        public static List<ClsPersona> listadoCompletoPersonasDAL()
+        static List<clsPersona> listadoDAL = new List<clsPersona>
         {
-            List<ClsPersona> listado = new List<ClsPersona>();
-
-            #region addPersonas
-            listado.Add(new ClsPersona(1, "Pablo", "Carbonero", DateTime.Parse("02/01/2003"), 1));
-            listado.Add(new ClsPersona(2, "María", "González", DateTime.Parse("15/03/1998"), 2));
-            listado.Add(new ClsPersona(3, "Juan", "Martínez", DateTime.Parse("12/07/2000"), 3));
-            listado.Add(new ClsPersona(4, "Lucía", "López", DateTime.Parse("25/11/1995"), 4));
-            listado.Add(new ClsPersona(5, "Carlos", "Rodríguez", DateTime.Parse("18/06/1989"), 1));
-            listado.Add(new ClsPersona(6, "Ana", "Hernández", DateTime.Parse("09/04/1992"), 2));
-            listado.Add(new ClsPersona(7, "David", "Pérez", DateTime.Parse("22/09/2001"), 3));
-            listado.Add(new ClsPersona(8, "Sara", "Sánchez", DateTime.Parse("04/12/1997"), 4));
-            listado.Add(new ClsPersona(9, "Javier", "Ramírez", DateTime.Parse("30/05/1985"), 1));
-            listado.Add(new ClsPersona(10, "Elena", "Torres", DateTime.Parse("16/10/1990"), 2));
-            listado.Add(new ClsPersona(11, "Alberto", "Vega", DateTime.Parse("08/08/2002"), 3));
-            listado.Add(new ClsPersona(12, "Claudia", "Rivas", DateTime.Parse("23/02/1994"), 4));
-            listado.Add(new ClsPersona(13, "Francisco", "Ortega", DateTime.Parse("05/01/1996"), 1));
-            listado.Add(new ClsPersona(14, "Marta", "Ibáñez", DateTime.Parse("29/03/1993"), 2));
-            listado.Add(new ClsPersona(15, "Adrián", "Gil", DateTime.Parse("14/07/1999"), 3));
-            listado.Add(new ClsPersona(16, "Patricia", "Cano", DateTime.Parse("19/11/2004"), 4));
-            listado.Add(new ClsPersona(17, "Daniel", "Molina", DateTime.Parse("11/06/1991"), 1));
-            listado.Add(new ClsPersona(18, "Laura", "Blanco", DateTime.Parse("06/04/2000"), 2));
-            listado.Add(new ClsPersona(19, "Alejandro", "Domínguez", DateTime.Parse("27/09/1998"), 3));
-            listado.Add(new ClsPersona(20, "Raquel", "Serrano", DateTime.Parse("02/12/2003"), 4));
-            listado.Add(new ClsPersona(21, "Sergio", "Medina", DateTime.Parse("15/05/1997"), 1));
-            listado.Add(new ClsPersona(22, "Irene", "Fernández", DateTime.Parse("20/10/1995"), 2));
-            listado.Add(new ClsPersona(23, "Miguel", "Navarro", DateTime.Parse("09/08/1986"), 3));
-            listado.Add(new ClsPersona(24, "Nuria", "Castro", DateTime.Parse("13/02/2001"), 4));
-            listado.Add(new ClsPersona(25, "Andrés", "Rojas", DateTime.Parse("17/01/1994"), 1));
-            listado.Add(new ClsPersona(26, "Carmen", "Flores", DateTime.Parse("21/03/1999"), 2));
-            listado.Add(new ClsPersona(27, "Iván", "Suárez", DateTime.Parse("10/07/1993"), 3));
-            listado.Add(new ClsPersona(28, "Sofía", "Rubio", DateTime.Parse("05/11/1992"), 4));
-            listado.Add(new ClsPersona(29, "Pedro", "Cruz", DateTime.Parse("18/06/1998"), 1));
-            listado.Add(new ClsPersona(30, "Teresa", "Delgado", DateTime.Parse("22/04/2000"), 2));
-            #endregion
-
+            new clsPersona(1, "Pablo", "Carbonero", DateTime.Parse("02/01/2003"), 1),
+            new clsPersona(2, "Laura", "Gómez", DateTime.Parse("15/03/1998"), 2),
+            new clsPersona(3, "Carlos", "Fernández", DateTime.Parse("07/12/2000"), 3),
+            new clsPersona(4, "Ana", "Martínez", DateTime.Parse("22/06/1995"), 1),
+            new clsPersona(5, "Luis", "Hernández", DateTime.Parse("13/08/1992"), 2),
+            new clsPersona(6, "María", "Pérez", DateTime.Parse("01/09/2001"), 3),
+            new clsPersona(7, "Jorge", "Sánchez", DateTime.Parse("30/10/1997"), 1),
+            new clsPersona(8, "Claudia", "Díaz", DateTime.Parse("20/02/1999"), 2),
+            new clsPersona(9, "Sergio", "López", DateTime.Parse("17/11/2004"), 3),
+            new clsPersona(10, "Elena", "García", DateTime.Parse("05/07/1996"), 1),
+            new clsPersona(11, "Miguel", "Ruiz", DateTime.Parse("14/04/2002"), 2),
+            new clsPersona(12, "Alba", "Jiménez", DateTime.Parse("28/09/1993"), 3),
+            new clsPersona(13, "Fernando", "Navarro", DateTime.Parse("09/06/1990"), 1),
+            new clsPersona(14, "Raquel", "Romero", DateTime.Parse("19/01/1988"), 2),
+            new clsPersona(15, "Iván", "Ortega", DateTime.Parse("03/05/2005"), 3),
+            new clsPersona(16, "Patricia", "Castro", DateTime.Parse("08/11/1994"), 1),
+            new clsPersona(17, "Alberto", "Moreno", DateTime.Parse("11/03/2000"), 2),
+            new clsPersona(18, "Sara", "Vega", DateTime.Parse("26/12/2003"), 3),
+            new clsPersona(19, "David", "Ramos", DateTime.Parse("16/02/1991"), 1),
+            new clsPersona(20, "Inés", "Torres", DateTime.Parse("21/10/1999"), 2),
+            new clsPersona(21, "Rafael", "Gil", DateTime.Parse("04/08/1995"), 3),
+            new clsPersona(22, "Cristina", "Molina", DateTime.Parse("31/07/2002"), 1),
+            new clsPersona(23, "Víctor", "Álvarez", DateTime.Parse("06/05/1987"), 2),
+            new clsPersona(24, "Adriana", "Domínguez", DateTime.Parse("24/04/1998"), 3),
+            new clsPersona(25, "Francisco", "Delgado", DateTime.Parse("12/01/1992"), 1),
+            new clsPersona(26, "Silvia", "Reyes", DateTime.Parse("10/03/2001"), 2),
+            new clsPersona(27, "Héctor", "Flores", DateTime.Parse("18/09/1990"), 3),
+            new clsPersona(28, "Natalia", "Cano", DateTime.Parse("07/07/1989"), 1),
+            new clsPersona(29, "Andrés", "Ibáñez", DateTime.Parse("25/11/1993"), 2),
+            new clsPersona(30, "Rocío", "Martín", DateTime.Parse("29/06/2004"), 3)
+        };
+        public static List<clsPersona> listadoCompletoPersonasDAL()
+        {
+            List<clsPersona> listado = listadoDAL;
             return listado;
         }
 
-        public static ClsPersona getPersonaId(int id)
+        public static clsPersona getPersonaId(int id)
         {
-            List<ClsPersona> listado = listadoCompletoPersonasDAL();
-            ClsPersona persona = new ClsPersona();
+            List<clsPersona> listado = listadoCompletoPersonasDAL();
+            clsPersona persona = new clsPersona();
            
-            persona = listado.Find(p => p.Id == id) ?? new ClsPersona();
+            persona = listado.Find(p => p.Id == id) ?? new clsPersona();
 
             return persona;
         }
 
-        public static bool editarPersonaIdDAL(ClsPersona persona)
+        public static bool editarPersonaIdDAL(clsPersona persona)
         {
             bool edit = false;
-            List<ClsPersona> listado = listadoCompletoPersonasDAL();
-            ClsPersona p;
+            clsPersona p;
             int i = 0;
 
-            while (i < listado.Count && !edit) 
+            while (i < listadoDAL.Count && !edit) 
             { 
-                if(persona.Id == listado[i].Id)
+                if(persona.Id == listadoDAL[i].Id)
                 {
                     edit = true;
-                    listado[i] = persona;
+                    listadoDAL[i] = persona;
                 }
                 i++;
             }

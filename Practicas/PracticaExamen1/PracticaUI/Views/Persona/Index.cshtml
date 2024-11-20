@@ -1,0 +1,52 @@
+﻿@model PracticaUI.Models.ViewModels.PersonaListaPersonasVM
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<!-- Formulario para mostrar las personas -->
+<form method="post">
+    <table class="table" id="personas" name="id">
+        <tbody>
+            @foreach (var item in @Model.ListaPersonas)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellidos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdDepartamento)
+                    </td>
+                    <td>
+                        <button type="submit" name="id" value="@item.Id">Ver Detalles</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+
+@if (Model.Persona != null)
+{
+    <div style="display: flex; flex-direction: column; border:5px solid Black;
+                width: 700px; margin: 0 auto; padding: 20px;">
+        <h2>@Model.Persona.Nombre</h2>
+        <h4>@Model.Persona.Apellidos</h4>
+        <p>@Model.Persona.FechaNacimiento</p>
+        <p>@Model.Persona.IdDepartamento</p>
+        <form action="@Url.Action("Edit", new { id = Model.Persona.Id })">
+            <input type="submit" value="Editar" />
+        </form>
+    </div>
+}

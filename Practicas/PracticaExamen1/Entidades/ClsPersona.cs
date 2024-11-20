@@ -1,6 +1,6 @@
 ﻿namespace Entidades
 {
-    public class ClsPersona
+    public class clsPersona
     {
         #region Propiedades
         public int Id { get; set; }
@@ -13,8 +13,8 @@
         #endregion
 
         #region Constructores
-        public ClsPersona() { }
-        public ClsPersona(int id, string nombre, string apellidos, DateTime fechaNacimiento, int idDepartamento)
+        public clsPersona() { }
+        public clsPersona(int id, string nombre, string apellidos, DateTime fechaNacimiento, int idDepartamento)
         {
             Id = id;
             Nombre = nombre;

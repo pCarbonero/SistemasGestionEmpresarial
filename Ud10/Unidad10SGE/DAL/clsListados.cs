@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using DAL.Conexion;
+using Entidades;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace DAL
             List<clsPersona> lista = new List<clsPersona>();
             clsPersona persona;
 
-            clsMyConnection connection = new clsMyConnection();
+            clsConexion connection = new clsConexion();
             SqlConnection connect = new SqlConnection();
 
             SqlCommand miComando = new SqlCommand();
@@ -27,8 +28,8 @@ namespace DAL
 
             try
             {
-                connect = connection.getConnection();
-                miComando.CommandText = "SELECT *  FROM personas";
+                connection.getConnection(ref connect);
+                miComando.CommandText = "SELECT * FROM personas";
                 miComando.Connection = connect;
                 miLector = miComando.ExecuteReader();
 

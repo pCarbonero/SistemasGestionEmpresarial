@@ -1,0 +1,63 @@
+[Entidades]
+
+clsMafioso
+	+ Id int (get)
+	+ Nombre string (get, set)
+	+ Apellidos string (get, set)
+	+ FechaNacimiento DateTime (get, set)
+
+clsMisiones
+	+ Id int (get)
+	+ Nombre string (get, set)
+	+ Descripcion string (get, set)
+	+ Pago float (get, set)
+	+ IdMafioso(get, set)
+
+------------------------------------------
+
+[DAL]
+	
+	clsListadosDAL
+		- static List(Mafioso) 
+		- static List(Mision)
+		+ static List(Mafioso) listadoCompletoMafiososDAL
+		+ static List(Mision) listadoCompletoMisionesDAL
+		+ static List(Mision) listadoMisionesPorIdMafiosoBL
+
+-------------------------------------------
+
+[BL]
+	
+	clsListadosBL()
+		+ static List(Mafiso) listadoCompletoMafiososBL -> devuelve una lista de mafiosos, si es domingo no se trabaja (DomingoExepcion)
+		+ static List(Mision) listadoCompletoMisionesBL -> devuelve una lista de misiones de la capa DAL
+		+ static List(Mision) listadoMisionesPorIdBL -> devuelve una lista de misiones con un Id de mafioso concreto de DAL
+
+-------------------------------------------
+
+[MODELS]
+
+	clsMisionConCheck: clsMision
+		+ bool MisionCompleta(get, set)
+
+-------------------------------------------
+
+[VIEWMODEL]
+
+	clsMafiososMisionesVM
+		+ List(Mafiosos) listadoMafiosos (get)
+		+ List(Misiones) listadoMisionesPorIdMafioso (get)
+
+-------------------------------------------
+
+[CONTROLLERS]
+
+	Index()
+		rellenarListaMafiosos
+		return View(VM)
+
+	[HTTPPOST]
+		Index(int idMafioso)
+			rellenarListaMisiones
+			rellenarListaMafiosos
+			return View(VM)

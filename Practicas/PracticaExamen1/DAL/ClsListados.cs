@@ -4,7 +4,7 @@ namespace DAL
 {
     public class clsListados
     {
-        static List<clsPersona> listadoDAL = new List<clsPersona>
+        private static List<clsPersona> listadoDAL = new List<clsPersona>
         {
             new clsPersona(1, "Pablo", "Carbonero", DateTime.Parse("02/01/2003"), 1),
             new clsPersona(2, "Laura", "Gómez", DateTime.Parse("15/03/1998"), 2),

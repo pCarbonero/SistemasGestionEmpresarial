@@ -1,5 +1,8 @@
 using System.Diagnostics;
+using BL;
+using Entidades;
 using ExamenUI.Models;
+using ExamenUI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExamenUI.Controllers
@@ -13,20 +16,63 @@ namespace ExamenUI.Controllers
             _logger = logger;
         }
 
+
         public IActionResult Index()
         {
-            return View();
+            ListaMisionesCandidatosVM vm;
+            try
+            {
+                vm = new ListaMisionesCandidatosVM();
+            }catch (Exception ex)
+            {
+                return View("Error");
+            }
+            return View(vm);
         }
 
-        public IActionResult Privacy()
+        /// <summary>
+        /// Cuando se pulsa en el boton mostrar candidatos se hace el metodo post el cual muestra la lista de candidatos
+        /// </summary>
+        /// <param name="idMision"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult Index(int idMision)
         {
-            return View();
+            ListaMisionesCandidatosVM vm;
+            try
+            {
+                vm = new ListaMisionesCandidatosVM(idMision);
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+            }
+            return View(vm);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        /// <summary>
+        /// ActioResult para la vista de detalles.
+        /// Se crea un objeto de clsCandidato y se pasan sus propiedades por parametros para un model clsCandidatoConEdad para crearlo 
+        /// pasarlo a la visa
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Details(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            try
+            {
+                clsCandidato candidato = clsListadosBL.getCandidatoPorIdBL(id);
+
+                clsCandidatoConEdad candidatoConEdad =
+                    new clsCandidatoConEdad(candidato.Id, candidato.Nombre, candidato.Apellidos, candidato.Direccion,
+                                            candidato.Nacionalidad, candidato.Telefono, candidato.FechaNacimiento, candidato.PrecioMedio);
+
+                return View(candidatoConEdad);
+            }catch (Exception ex)
+            {
+                return View("Error");
+            }
+
         }
     }
 }

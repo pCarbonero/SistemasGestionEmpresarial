@@ -1,8 +1,65 @@
-﻿@{
+﻿@model ExamenUI.ViewModels.ListaMisionesCandidatosVM
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    <form method="post" name="idMision">
+
+        <select id="misiones" name="idMision">
+            @foreach (var mision in Model.ListadoMisiones)
+            {
+                <option value="@mision.Id">@mision.Nombre</option>
+            }              
+        </select>
+        <input type="submit" value="Ver candidatos" />
+    </form>
+</div>
+
+<div>
+    @if (Model.ListadoCandidatos != null)
+    {
+        @if (Model.ListadoCandidatos.Count == 0)
+        {
+            <p>No hay candidatos que cumplan las condiciones necesarias para realizar esa mision</p>
+        }
+        else
+        {          
+        @foreach (var item in Model.ListadoCandidatos)
+        {
+            <table>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nacionalidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecioMedio)
+                </td>
+                <td>
+                    @Html.ActionLink("Ver detalles", "Details", new { id=item.Id }) |
+                </td>
+            </tr>
+            </table>
+        }
+        }
+    }
 </div>

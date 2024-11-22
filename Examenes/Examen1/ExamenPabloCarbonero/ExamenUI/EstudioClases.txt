@@ -1,0 +1,49 @@
+[Entidades]
+
+	clsCandidato
+		+ int Id (get, set)
+		+ string Nombre (get, set)
+		+ string Apellidos (get , set)
+		+ string Direccion (get, set)
+		+ int Telefono (get, set)
+		+ DateTime FechaNacimiento (get, set)
+		+ float cantidadCobrada (get, set)
+		+ string Nacionalidad (get, set)
+
+	clsMision
+		+ int Id (get, set)
+		+ string nombre (get, set)
+		+ int dificultad (get, set)
+
+
+[DAl]
+
+	clsListadosDAL
+		+ static List<clsMision> listadoCompletoMisionesDAL()
+
+		+ static List<clsCandidato> listadoCompletoCandidatosDAL()
+
+		+ static clsCandidato getCandidatoPorIdDAL(int idCandidato)
+
+[BL]
+
+	clsListados
+		+ static List<clsMision> listadoCompletoMisionesBL()
+
+		+ static List<clsCandidato> listadoCandidatosPorIdMisionBL(int idMision)
+			busca la mision y comprueba las caracteristicas filtrando la lista 
+			que devolverá para que cumpla las reglas de negocio
+
+		+ static clsCandidato getCandidatoPorIdDAL(int idCandidato) 
+
+[UI]
+
+	*VIEWMODEL
+		ListaMisionesCandidatosVM -> primera vista
+			+ List<clsMision> listadoMisiones (get)
+			+ clsMision misionSeleccionada (get)
+			+ List<clsCandidato> listadoCandidatosParaMision (get)
+
+	*MODEL
+		clsCandidatoConEdad: clsCandidato
+			+ int Edad (get)

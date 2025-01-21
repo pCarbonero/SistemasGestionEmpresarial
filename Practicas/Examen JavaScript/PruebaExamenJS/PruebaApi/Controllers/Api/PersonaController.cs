@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entidades;
+using DAL;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,9 +12,30 @@ namespace PruebaApi.Controllers.Api
     {
         // GET: api/<PersonaController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            IActionResult salida;
+
+            List<clsPersona> listaPersonas;
+
+            try
+            {
+                listaPersonas = clsListadosDAL.getPersonasDAL();
+                if (listaPersonas.Count() == 0)
+                {
+                    salida = NoContent();
+                }
+                else
+                {
+                    salida = Ok(listaPersonas);
+                }
+            }
+            catch (Exception ex)
+            {
+                salida = BadRequest(ex.Message);
+            }
+
+            return salida;
         }
 
         // GET api/<PersonaController>/5
@@ -24,8 +47,22 @@ namespace PruebaApi.Controllers.Api
 
         // POST api/<PersonaController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] clsPersona personaAdd)
         {
+            IActionResult salida;
+            bool guardado = false;
+            try
+            {
+                clsListadosDAL.addPersona(personaAdd);
+                guardado = true;
+                salida = Ok(guardado);
+            }
+            catch (Exception ex)
+            {
+                salida = BadRequest();
+            }
+
+            return salida;
         }
 
         // PUT api/<PersonaController>/5

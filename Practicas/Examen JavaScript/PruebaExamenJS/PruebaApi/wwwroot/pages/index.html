@@ -3,8 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="../js/site.js"></script>
 </head>
 <body>
-    <h1>EL INDEX</h1>
+    <h1>LA PRACTICA'E MIELDA</h1>
+
+    <button onclick="cargarPersonas()">Ver personas</button>
+
+    <form onsubmit="addPersona()">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="Apellidos">Apellidos:</label><br>
+        <input type="text" id="Apellidos" name="Apellidos"><br>
+        <label for="Dept">Dept:</label><br>
+        <input type="text" id="Dept" name="Dept"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="cargando"></p>
+    <ul id="lista">
+    </ul>
 </body>
 </html>

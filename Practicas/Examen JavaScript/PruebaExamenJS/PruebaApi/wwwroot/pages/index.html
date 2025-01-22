@@ -4,23 +4,28 @@
     <meta charset="utf-8" />
     <title></title>
     <script src="../js/site.js"></script>
+    <link href="../css/site.css" rel="stylesheet" />
 </head>
 <body>
     <h1>LA PRACTICA'E MIELDA</h1>
 
-    <button onclick="cargarPersonas()">Ver personas</button>
+    <button onclick="cargarPersonas()">Ver personas</button><br><br>
 
-    <form onsubmit="addPersona()">
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre"><br>
-        <label for="Apellidos">Apellidos:</label><br>
-        <input type="text" id="Apellidos" name="Apellidos"><br>
-        <label for="Dept">Dept:</label><br>
-        <input type="text" id="Dept" name="Dept"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <label>Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre"><br>
+    <label>Apellidos:</label><br>
+    <input type="text" id="Apellidos" name="Apellidos"><br>
+    <label>Dept:</label><br>
+    <input type="text" id="Dept" name="Dept"><br><br>
+    <button onclick="addPersona()">Añadir persona</button>
 
     <p id="cargando"></p>
+
+
+    <table id="tabla">
+
+    </table>
+
     <ul id="lista">
     </ul>
 </body>

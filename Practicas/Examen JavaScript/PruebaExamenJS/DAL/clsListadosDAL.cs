@@ -39,10 +39,22 @@ namespace DAL
         {
             return listaDepartamentos;
         }
+        public static clsDepartamento getDepartamentoIdDAL(int id)
+        {
+            //MyClass result = list.Find(x => x.GetId() == "xy");
+            clsDepartamento dept = listaDepartamentos.Find(d => d.Id == id);
+            return dept;
+        }
 
         private static int lastIdPersona(clsPersona persona)
         {
-            return listaPersonas[^1].Id;
+            int id = 1;
+
+            foreach (clsPersona p in listaPersonas)
+            {
+                id++;
+            }
+            return id+1;
         }
     }
 }

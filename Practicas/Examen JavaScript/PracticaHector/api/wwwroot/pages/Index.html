@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../js/site.js"></script>
+    <link href="../css/site.css" rel="stylesheet" />
+</head>
+<body>
+
+    <h1>EXAMEN ARCANE 🐱‍👓👀✔👍🙌</h1>
+
+    <table id="tabla">
+    </table>
+
+    <div id="detalles">
+
+    </div>
+
+
+    <button onclick="cargarPersonajes()">
+        Cargar
+    </button>
+
+    <button onclick="cargarOpciones()">
+        crear
+    </button>
+
+    <div id="add" style="visibility:hidden">
+        <label>Nombre</label>
+        <input type="text" id="nombre" />
+        <label>FechaNacimiento</label>
+        <input type="date" id="date" />
+        <label>Bando</label>
+        <select id="bandoSelect">
+        </select>
+
+        <button onclick="crearPersonaje()">Guardar</button>
+
+        <label id="error"></label>
+    </div>
+
+</body>
+</html>

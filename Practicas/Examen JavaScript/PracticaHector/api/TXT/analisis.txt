@@ -1,0 +1,85 @@
+Entidades[
+	clsPersonaje
+		+ int Id {get; set;}
+		+ string Nombre {get; set;}
+		+ dateTime FechaNac {get; set;}
+		+ int IdBando {get; set;}
+	
+
+	clsBando
+		+ int Id {get; set;}
+		+ string Nombre {get; set;}	
+]
+
+
+DAL[
+	clsListadosDAL
+		+ static List<clsPersonaje>
+		+ static List<clsBando>
+
+		+ static List<clsPersonaje> getListaPersonajesDAL
+		+ static List<clsBando> getListaBandosDAL
+		
+		+ static clsPersonaje getPersonajeIdDAL(int id)
+		+ static clsBando getBandoIdDAL(int id)
+
+		+ static bool addPersonajeDAL(clsPersonaje personaje)
+
+		+ static bool removePersonajeDAL(int id)
+
+		+ static bool replacePersonajeDAL(clsPersonaje p)
+
+		+ static bool updatePersonajeDAL(int id, clsPersonaje p)
+
+		- static int nextId()
+]
+
+
+BL[
+	clsListadosBL
+		+ static List<clsPersonaje> getListaPersonajesBL
+		+ static List<clsBando> getListaBandosBL
+		
+		+ static clsPersonaje getPersonajeIdBL(int id)
+		+ static clsBando getBandoIdBL(int id)
+
+		+ static bool addPersonajeBL(clsPersonaje personaje)
+
+		+ static bool removePersonajeBL(int id)
+
+		+ static bool replacePersonajeBL(clsPersonaje p)
+
+		+ static bool updatePersonajeBL(int id, clsPersonaje p)
+
+		- static int nextId()
+]
+
+
+Modelos[
+	clsPersonajeEdadBando
+		+ int Id
+		+ string Nombre
+		+ dateTime FechaNac
+		+ int IdBando
+
+		+ int Edad
+		+ string NombreBando
+
+		+ clsPersonajeEdadBando(id, nombre, fechaNac, idBando, edad, nombreBando)
+		+ clsPersonajeEdadBando(nombre, fechaNac, idBando, edad, nombreBando)
+		+ clsPersonajeEdadBando()
+]
+
+ControllersAPI[
+
+	PersonajeController
+		get()
+		get(id)
+		Post
+		Delete
+		Put				
+
+	BandoController
+		get()
+		get(id)
+]

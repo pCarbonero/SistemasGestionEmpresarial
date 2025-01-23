@@ -1,5 +1,14 @@
-<form action="">
-    <input type="text" placeholder="Nombre" name="Nombre">
-    <input type="text" placeholder="Apellidos" Name="Apellidos">
-    <button>Enviar</button>
+<form [formGroup]="formulario">
+    <p>
+        <span>Nombre</span>
+        <input type="text" placeholder="Nombre" id="Nombre" formControlName="nombre"/>
+        <span *ngIf="(formulario.controls.nombre.dirty || formulario.controls.nombre.touched) && this.formulario.controls.nombre.errors?.required">
+            El nombre es obligatorio
+        </span>
+    </p>
+    <p>
+        <span>Apellidos</span>
+        <input type="text" placeholder="Apellidos" id="Apellidos" formControlName="apellidos"/>
+    </p>    
+    <button type="button" (click)="saluda()">Saludar</button>
 </form>

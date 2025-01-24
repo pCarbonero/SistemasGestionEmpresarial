@@ -103,10 +103,12 @@ function obtenerPersonaje(id) {
 }
 
 function detalles(personaje) {
+    let fechaGood = new Date(personaje.fechaNacimiento).toISOString().split('T')[0];
     document.getElementById("detalles").innerHTML = `
         <h3>Detalles del Personaje</h3>
         <p><strong>Nombre:</strong> ${personaje.nombre}</p>
         <p><strong>Edad:</strong> ${personaje.edad}</p>
+        <p><strong>Edad:</strong> ${fechaGood}</p>
         <p><strong>Bando:</strong> ${personaje.nombreBando}</p>
     `;
 }

@@ -2,7 +2,6 @@
 // Customize the entire app. Change :root to your selector if you want to scope the styles.
 :root {
   @include mat.table-overrides((
-    background-color: orange,
-    header-headline-color: red,
+    background-color: orange
   ));
 }

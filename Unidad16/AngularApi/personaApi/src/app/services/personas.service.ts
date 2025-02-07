@@ -16,8 +16,15 @@ export class PersonasService {
   constructor() { }
   http=inject(HttpClient);
   listadoPersonas(): Observable<Persona[]>{
+    return this.http.get<Persona[]>(this.urlWebAPI);   
+  }
 
-    return this.http.get<Persona[]>(this.urlWebAPI);
-    
-    }
+  addPersona(persona: Persona): Observable<Persona[]>{
+    return this.http.post<Persona[]>(this.urlWebAPI,persona);
+  }
+
+  deletePersona(id: number): Observable<Persona[]>{
+    return this.http.delete<Persona[]>(`${this.urlWebAPI}/${id}`);
+  }
+  
 }

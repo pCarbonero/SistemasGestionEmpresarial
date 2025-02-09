@@ -19,8 +19,9 @@ export class PersonasService {
     return this.http.get<Persona[]>(this.urlWebAPI);   
   }
 
-  addPersona(persona: Persona): Observable<Persona[]>{
-    return this.http.post<Persona[]>(this.urlWebAPI,persona);
+  
+  addPersona(persona: Persona): Observable<boolean>{
+    return this.http.post<boolean>(this.urlWebAPI,persona);
   }
 
   deletePersona(id: number): Observable<Persona[]>{
@@ -29,6 +30,11 @@ export class PersonasService {
 
   updatePersona(persona: Persona): Observable<Persona[]>{
     return this.http.put<Persona[]>(this.urlWebAPI,persona);
+  }
+
+
+  detailsPersona(id: number): Observable<Persona>{
+    return this.http.get<Persona>(`${this.urlWebAPI}/${id}`);
   }
   
 }

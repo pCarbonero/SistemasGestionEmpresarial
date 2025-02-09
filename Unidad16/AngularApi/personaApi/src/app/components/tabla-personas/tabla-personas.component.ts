@@ -10,11 +10,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponentComponent } from '../dialog-component/dialog-component.component';
 import { DialogEditarComponent } from '../dialog-editar/dialog-editar.component';
+import { DetallesComponent } from '../detalles/detalles.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-tabla-personas',
-  imports: [/*NgFor,*/ CommonModule, MatTableModule, MatHeaderRowDef, MatRowDef, MatButtonModule, MatSnackBarModule, MatDialogModule],
+  imports: [/*NgFor,*/ CommonModule, MatTableModule, MatHeaderRowDef, MatRowDef, MatButtonModule, MatSnackBarModule, MatDialogModule, DetallesComponent],
   templateUrl: './tabla-personas.component.html',
   styleUrl: './tabla-personas.component.scss'
  // encapsulation: ViewEncapsulation.None
@@ -44,6 +45,15 @@ export class TablaPersonasComponent implements OnInit{
       height: '400px',
       width: '600px',
       data: personaEditar
+    });
+  }
+
+  abrirDetallesPersona(id: number): void{
+    //alert("ID:" + id)
+    let dialog = this.dialog.open(DetallesComponent, {
+      height: '800px',
+      width: '800px',
+      data: id
     });
   }
 

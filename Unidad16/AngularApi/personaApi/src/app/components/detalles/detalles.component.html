@@ -1,0 +1,35 @@
+<div mat-dialog-content>
+    <img src="{{persona.foto}}" height="500" width="500">
+
+
+    <h2>{{persona.nombre}} {{persona.apellidos}}</h2>
+
+    <br>
+
+    <mat-label>
+        Fecha de nacimiento: {{persona.fechaNacimiento| date: "dd/MM/YYYY"}}
+    </mat-label>
+
+    <br>
+
+    <mat-label>
+        Dirección: {{persona.direccion}}
+    </mat-label>
+
+    <br>
+
+    <mat-label>
+        Teléfono: {{persona.telefono}}
+    </mat-label>
+
+    <br>
+
+    <mat-label>
+        Departamento: {{persona.idDepartamento}}
+    </mat-label>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="dialog.close()">Salir</button>
+</div>
+

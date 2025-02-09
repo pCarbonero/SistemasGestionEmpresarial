@@ -35,7 +35,7 @@ export class DialogComponentComponent {
         this.dialogRef.close();       
         },    
         error: (error)=>{       
-          alert("Ha ocurrido un error al obtener los datos delservidor");     
+          alert("Ha ocurrido un error");     
         }    
       });     
     }

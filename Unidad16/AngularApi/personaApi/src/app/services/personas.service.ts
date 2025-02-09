@@ -26,5 +26,9 @@ export class PersonasService {
   deletePersona(id: number): Observable<Persona[]>{
     return this.http.delete<Persona[]>(`${this.urlWebAPI}/${id}`);
   }
+
+  updatePersona(persona: Persona): Observable<Persona[]>{
+    return this.http.put<Persona[]>(this.urlWebAPI,persona);
+  }
   
 }

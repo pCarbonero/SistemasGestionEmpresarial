@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Crear Persona</h2>
+<h2 mat-dialog-title>Actualizar Persona</h2>
 
 <div mat-dialog-content>
   <form #personaForm="ngForm">
@@ -40,6 +40,7 @@
 </div>
 
 <div mat-dialog-actions align="end">
-  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+  <button mat-button (click)="dialog.close()">Cancelar</button>
   <button mat-raised-button color="primary" (click)="guardarPersona()">Guardar</button>
 </div>
+

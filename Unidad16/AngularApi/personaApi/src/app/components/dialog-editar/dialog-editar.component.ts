@@ -7,32 +7,34 @@ import { FormsModule } from '@angular/forms';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-dialog-component',
-  imports: [MatDialogModule, FormsModule, MatFormField, MatInputModule, MatButtonModule],
-  templateUrl: './dialog-component.component.html',
-  styleUrl: './dialog-component.component.scss'
+  selector: 'app-dialog-editar',
+  imports: [MatDialogModule, FormsModule, MatFormField, MatInputModule, MatButtonModule, CommonModule],
+  templateUrl: './dialog-editar.component.html',
+  styleUrl: './dialog-editar.component.scss'
 })
-export class DialogComponentComponent {
- // aqui que pongo
-  persona: Persona = {nombre: '', apellidos: '', telefono: '', direccion: '', foto: '', fechaNacimiento: new Date(2000, 0, 2), idDepartamento: 0};
+export class DialogEditarComponent {
+  persona: Persona
 
   constructor(
     private personasServicio: PersonasService,
-    public dialogRef: MatDialogRef<DialogComponentComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+    public dialog: MatDialogRef<DialogEditarComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Persona
+  ) {
+    this.persona = data;
+  }
 
   guardar(): void {
-    this.dialogRef.close(this.persona);
+    this.dialog.close(this.persona);
   }
 
   async guardarPersona() { 
-    this.personasServicio.addPersona(this.persona).subscribe({   
+    this.personasServicio.updatePersona(this.persona).subscribe({   
       next:(response) =>{        
-        alert("Se ha guardado correctamente");
-        this.dialogRef.close();       
+        alert("Se ha actualizado correctamente");
+        this.dialog.close();       
         },    
         error: (error)=>{       
           alert("Ha ocurrido un error al obtener los datos delservidor");     

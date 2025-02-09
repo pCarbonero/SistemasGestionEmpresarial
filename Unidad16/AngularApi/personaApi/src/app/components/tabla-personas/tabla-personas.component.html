@@ -1,4 +1,4 @@
-<p>Listado de Personas</p>
+<br><button mat-raised-button (click)="abrirCrearPersona()">Crear</button>
 
 <!--<table mat-table width="100%" border="1">
     <th>Id</th>
@@ -40,7 +40,11 @@
 
     <ng-container matColumnDef=" ">
         <th mat-header-cell *matHeaderCellDef>  </th>
-        <td mat-cell *matCellDef="let persona"><button mat-raised-button (click)="deletePersona(persona.id)">Borrar</button> </td>
+        <td mat-cell *matCellDef="let persona">
+            <button mat-raised-button (click)="deletePersona(persona.id)">Borrar</button> 
+            <button mat-raised-button (click)="abrirEditarPersona(persona)">Editar</button>
+        </td>
+
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -7,10 +7,14 @@ import { MatHeaderRowDef } from '@angular/material/table';
 import { MatRowDef } from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponentComponent } from '../dialog-component/dialog-component.component';
+import { DialogEditarComponent } from '../dialog-editar/dialog-editar.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-tabla-personas',
-  imports: [/*NgFor,*/ CommonModule, MatTableModule, MatHeaderRowDef, MatRowDef, MatButtonModule, MatSnackBarModule],
+  imports: [/*NgFor,*/ CommonModule, MatTableModule, MatHeaderRowDef, MatRowDef, MatButtonModule, MatSnackBarModule, MatDialogModule],
   templateUrl: './tabla-personas.component.html',
   styleUrl: './tabla-personas.component.scss'
  // encapsulation: ViewEncapsulation.None
@@ -21,7 +25,27 @@ export class TablaPersonasComponent implements OnInit{
   listadoPersonas: Persona[]; 
   displayedColumns: string[] = ['id', 'nombre', 'apellidos', 'fechaNacimiento', ' '];
 
-  constructor(private personasServicio: PersonasService) { }
+  constructor(private personasServicio: PersonasService, public dialog: MatDialog) { }
+
+  abrirCrearPersona(): void {
+    let dialogRef = this.dialog.open(DialogComponentComponent, {
+      height: '400px',
+      width: '600px',
+    });
+
+    this.dialog.afterAllClosed.subscribe(() => {
+      this.obtenerPersonas();
+    });
+  }
+
+  abrirEditarPersona(personaEditar: Persona): void {
+    // aqui le paso un objeto persona para que en el ts del componente se inicialice un objeto con las mismas propiedades
+    let dialogRef = this.dialog.open(DialogEditarComponent, {
+      height: '400px',
+      width: '600px',
+      data: personaEditar
+    });
+  }
 
   async obtenerPersonas() { 
     this.personasServicio.listadoPersonas().subscribe({   
